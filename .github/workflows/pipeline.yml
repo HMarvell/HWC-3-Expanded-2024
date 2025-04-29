@@ -7,9 +7,11 @@ on:
         - '**'
 
 jobs:
-  steps:
   checkout:
-    - uses: actions/checkout@v4
+    runs-on: self-hosted-rhel-runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
   
   lint:
     runs-on: self-hosted-rhel-runner
