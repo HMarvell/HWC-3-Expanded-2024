@@ -1,6 +1,3 @@
-
-#! /bin/bash
-
 filebeatyaml="filebeat.inputs:
 - type: filestream
   id: my-filestream-id
@@ -18,7 +15,7 @@ setup.template.settings:
 setup.kibana:
 
 output.logstash:
-  hosts: ['172.31.13.2:5044']
+  hosts: ['${PRIVATE_IP_LS}:5044']
   
 processors:
   - add_host_metadata:

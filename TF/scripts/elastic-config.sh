@@ -1,6 +1,3 @@
-
-#! /bin/bash
-
 elasticyaml="action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*
 path.data: /var/lib/elasticsearch
 path.logs: /var/log/elasticsearch
@@ -21,7 +18,7 @@ xpack.security.transport.ssl:
   keystore.path: certs/transport.p12
   truststore.path: certs/transport.p12
 
-cluster.initial_master_nodes: ['ip-172-31-13-1.ec2.internal']
+cluster.initial_master_nodes: ['${PRIVATE_IP}']
 
 http.host: 0.0.0.0"
 echo "$elasticyaml" > /etc/elasticsearch/elasticsearch.yml

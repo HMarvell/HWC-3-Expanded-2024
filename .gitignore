@@ -7,3 +7,5 @@
 *.tfstate.*
 org/**/*tf_plan_changes
 **/terraform.plan
+*.terraform.lock*
+*.pem
