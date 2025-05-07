@@ -1,3 +1,5 @@
+### Filebeat Config ###
+
 FILEBEATYML="filebeat.inputs:
 - type: filestream
   id: my-filestream-id
