@@ -1,4 +1,4 @@
-filebeatyaml="filebeat.inputs:
+FILEBEATYML="filebeat.inputs:
 - type: filestream
   id: my-filestream-id
   enabled: true
@@ -24,6 +24,6 @@ processors:
   - add_docker_metadata: ~
   - add_kubernetes_metadata: ~
   #ignore me"
-echo "$filebeatyaml" > /etc/filebeat/filebeat.yml
+echo "$FILEBEATYML" > /etc/filebeat/filebeat.yml
 
 systemctl start filebeat

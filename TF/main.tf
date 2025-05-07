@@ -6,12 +6,11 @@ resource "aws_instance" "tf-es" {
   user_data       = join("\n", [ 
     data.template_file.user_scripts_es.rendered,
     data.template_file.user_es_config.rendered,
-    data.template_file.user_fb_config.rendered,
     data.template_file.user_script_kibana.rendered ])
   security_groups = [aws_security_group.TF_security_group.name]
 
   tags = {
-    Name = "Elastic"
+    Name = "Elastic-Kibana"
   }
 }
 
@@ -22,11 +21,12 @@ resource "aws_instance" "tf-ls" {
   key_name        = "HWC-3"
   user_data       = join("\n", [ 
     data.template_file.user_scripts_ls.rendered,
-    data.template_file.user_ls_config.rendered ])
+    data.template_file.user_ls_config.rendered,
+    data.template_file.user_fb_config.rendered ])
   security_groups = [aws_security_group.TF_security_group.name]
 
   tags = {
-    Name = "Logstash"
+    Name = "Logstash-Filebeat"
   }
 }
 

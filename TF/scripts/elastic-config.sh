@@ -1,8 +1,8 @@
-elasticyaml="action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*
+ELASTICYML="action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*
 path.data: /var/lib/elasticsearch
 path.logs: /var/log/elasticsearch
 
-network.host: 0.0.0.0
+network.host: '${PRIVATE_IP}'
 http.port: 9200
 
 xpack.security.enabled: false
@@ -20,7 +20,7 @@ xpack.security.transport.ssl:
 
 cluster.initial_master_nodes: ['${PRIVATE_IP}']
 
-http.host: 0.0.0.0"
-echo "$elasticyaml" > /etc/elasticsearch/elasticsearch.yml
+http.host: '${PRIVATE_IP}'"
+echo "$ELASTICYML" > /etc/elasticsearch/elasticsearch.yml
 
 systemctl start elasticsearch

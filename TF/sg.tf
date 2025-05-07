@@ -1,7 +1,6 @@
 resource "aws_security_group" "TF_security_group" {
   name        = "security group using terraform"
   description = "security group using terraform"
-  vpc_id      = ""
 
   # inbound rules
   ingress {
