@@ -1,7 +1,7 @@
 # HWC-3-Expanded
- Expanding on the Previous HWC-2 Repo to utilise 3 Musketeers, adapting the A Cloud Guru Sandbox to utilise AWS instances to run dockerised containers in an EKS environment. 
+Expanding on the Previous HWC-2 Repo to utilise GHA to automate the creation of resources, adapting the A Cloud Guru Sandbox to utilise using self-hosted GHA runners to orchestrate the creation of resources within a sandbox environment. 
 
- ## Local User Instructions:
+## Local User Instructions:
 
 ### Pre-requisites
 * Terraform installed locally.
