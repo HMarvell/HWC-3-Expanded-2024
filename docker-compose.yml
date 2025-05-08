@@ -1,6 +1,0 @@
----
-services:
-  terraform:
-    image: hashicorp/terraform:1.9.2
-    env_file: .env
-    working_dir: /opt/app/
